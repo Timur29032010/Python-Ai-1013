@@ -1,50 +1,19 @@
-class Dog:
+class Parent1:
+    def __init__(self, attr1_parent1):
+        self.attr1_parent1 = attr1_parent1
 
-   def __init__(self,name):
-
-       self.name = name
-
-       self.hungry = True
-
-       self.tired = True
-
-       self.happy = False
+    def method1_parent1(self):
+        print("Method from Parent1")
 
 
-   def food(self):
+class Parent2:
+    def __init__(self, attr2_parent2):
+        self.attr2_parent2 = attr2_parent2
 
-       if self.hungry:
-
-           print(f"{self.name} Hungry and crazy.")
-
-           self.hungry = False
-
-       else:
-
-           print(f"{self.name} is not hungry.")
-
-
-   def sleep(self):
-
-       if self.tired:
-
-           print(f"{self.name} has gone to sleep.")
-
-           self.tired = False
-
-       else:
-
-           print(f"{self.name} is not tired.")
-
-
-   def play(self):
-
-       if self.happy:
-
-           print(f"{self.name} is already playing.")
-
-       else:
-
-           print(f"{self.name} is playing now.")
-
-           self.happy = True
+    def method2_parent2(self):
+        print("Method from Parent2")
+class Super(Parent1, Parent2):
+    def __init__(self):
+        def method_super(self):
+            super().method1_parent1()
+            super().method2_parent2()
